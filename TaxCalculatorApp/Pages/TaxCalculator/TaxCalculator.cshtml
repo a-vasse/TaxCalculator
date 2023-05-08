@@ -1,0 +1,22 @@
+﻿@page
+@model TaxCalculatorApp.Models.TaxCalculatorModel
+@{
+    ViewData["Title"] = "Tax Calculator";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="income">Income:</label>
+        <input type="number" class="form-control" id="income" name="Income" />
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+
+@if (Model.TaxAmount.HasValue)
+{
+    <div class="alert alert-success mt-3">
+        <strong>Tax Amount:</strong> @Model.TaxAmount
+    </div>
+}
